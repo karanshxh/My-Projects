@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="Submission" content="D0Z63URTUDLN9A1Z9NTVBJOSC"/>
+<meta name="Time" content="2021-09-15T20:28:07Z"/>
+<meta name="ID" content="Circle"/>
+<meta name="User" content="jaga-vuli-bofa-ryfi"/>
+<meta name="Problem" content="ext/210914221392j2x49d9qysz1trnkduve9hv"/>
+<meta name="Elapsed" content="4643 ms"/>
+<style type="text/css">
+.header {font-weight: bold; font-size: 1.2em; }
+.item {font-weight: bold;}
+.pass {color: green;}
+.fail {color: red;}
+.note {color: blue; font-weight: bold;}
+table.file td {padding-right: 1em; background: #FFF; }
+.linenumber {color: gray;}
+.footnote {font-size: 0.7em;}
+table {font-size: 0.9em;}
+td, th { background: #EEE; margin: 0.5em; padding: 0.25em;}
+table.output td {vertical-align: top;}
+div.footnotes { border-top: 1px solid gray; padding-top: 0.5em; }
+</style>
+<title>Report</title>
+</head>
+<body>
+<p class="header run">Testing ShapesDriver.java</p>
+<div class="run">
+<pre class="output">I am a Irregular shape
+I am a Rectangle
+  I am a 4 sided figure
+I am a Rectangle
+  I am a 4 sided figure
+    I have equal sides
+I am a Circle
+  I have no sides
+</pre>
+<span class="pass">pass </span></div>
+<p class="header studentFiles">Submitted files</p>
+<div class="studentFiles">
+<p class="caption">Circle.java:</p>
+<pre class="output">/**
+ * Last name: Shah
+ * First name: Karan
+ * Period: 2
+ * 
+ * Write a Circle class that extends the Shape class. Do the following:
+ * 1. Write the class header.
+ * 2. Write a default constructor that initializes the name of the Circle object to "Circle".
+ *    You will need to call the constructor of the parent Shape class.
+ * 3. Write a void method printMessage() that prints the message "  I have no sides".
+ *
+ */
+//Your code goes here
+
+public class Circle extends Shape {
+   public Circle(String name){
+      super(name);
+   }
+   
+   /**
+   * Prints the number of sides
+   * @param none
+   * @return none
+   */
+   public void printMessage(){
+      System.out.println("  I have no sides");
+   }
+}
+</pre>
+<p class="caption">Rectangle.java:</p>
+<pre class="output">/**
+ * Last name: Shah
+ * First name: Karan
+ * Period: 2
+ * 
+ * Write a Rectangle class that extends the Shape class. Do the following:
+ * 1. Write the class header.
+ * 2. Write a default constructor that initializes the name of the Rectangle object to "Rectangle".
+ *    You will need to call the constructor of the parent Shape class.
+ * 3. Write a void method printMessage() that prints the message "I am a 4 sided figure".
+ *
+ */
+//Your code goes here
+
+public class Rectangle extends Shape {
+    public Rectangle(String name) {
+    	super(name);
+    }
+    
+   /**
+   * Prints the number of sides
+   * @param none
+   * @return none
+   */
+   public void printMessage(){
+      System.out.println("  I am a 4 sided figure");
+   }
+}
+</pre>
+<p class="caption">Shape.java:</p>
+<pre class="output">/**
+ * Last name: Shah
+ * First name: Karan
+ * Period: 2
+ * 
+ * Write a Shape class. Do the following:
+ * 1. Write a class header for the Shape class.
+ * 2. Create a String attribute that holds the name of the Shape object. Use the keyword String to
+ *    declare a variable of your choice.
+ * 3. Write a parameterized constructor that initializes the name of the Shape object.
+ * 4. Write a void method printName() that prints the name of the Shape object.
+ *
+ */
+//Your code goes here
+// Create shape class with String attribute
+public class Shape {
+   String enterName;
+
+   public Shape(String name){
+      enterName = name;
+   }
+   
+   /**
+   * Prints the number of sides and sides description
+   * @param none
+   * @return none
+   */
+   public void printName(){
+      System.out.println("I am a " + enterName);
+   }
+}
+</pre>
+<p class="caption">ShapesDriver.java:</p>
+<pre class="output">/**
+ * Last name: Shah
+ * First name: Karan
+ * Period: 2
+ * 
+ * In this lab you will practice inheritance You will need
+ * to use System.out.println (String) to print messages to the console.
+ * 
+ * Write a driver class to test the methods of the Shape class and it's sub classes
+ * Do the following:
+ * 1. Create a Shape object called "Irregular shape". Call it myShape.
+ * 2. Print myShape's name.
+ * 3. Create a Rectangle object called "Rectangle". Call it myRect.
+ * 4. Print myRect's name.
+ * 5. Print myRect's message.
+ * 6. Create a Square object. Call it mySqr.
+ * 7. Print mySqr's name.
+ * 8. Print mySqr's message.
+ * 9. Create a Circle object. Call it myCircle.
+ * 7. Print myCircle's name.
+ * 8. Print myCircle's message.
+ * 
+ * After you have filled in the instructions, copy and paste the program into Code Check.
+ * The link is provided on canvas. Once you get the program to pass, download the
+ * zipped file generated by Code Check. DO NOT open or unzip this file. Submit the zipped file 
+ * on Canvas. 
+ */
+
+public class ShapesDriver {
+
+	public static void main(String[] args) {
+		//Your code goes here
+		
+		// Irregular shape
+		Shape myShape = new Shape("Irregular shape");
+		myShape.printName();
+		
+		// Rectangle shape
+	   Rectangle myRect = new Rectangle("Rectangle");
+	   myRect.printName();
+		myRect.printMessage();
+		
+		// Square shape
+	   Square mySqr = new Square("Square");
+	   mySqr.printName();
+		mySqr.printMessage();
+		
+		// Circle shape
+		Circle myCircle = new Circle("Circle");
+		myCircle.printName();
+		myCircle.printMessage();
+	}
+	
+}
+</pre>
+<p class="caption">Square.java:</p>
+<pre class="output">/**
+ * Last name: Shah
+ * First name: Karan
+ * Period: 2
+ * 
+ * Write a Square class that extends the Rectangle class. Do the following:
+ * 1. Write the class header.
+ * 2. Write a default constructor that initializes the name of the Square object to "Rectangle".
+ *    You will need to call the constructor of the parent Rectangle class.
+ * 3. Write a void method printMessage() that prints the message 
+ *    "I am a 4 sided figure
+ *       I have equal sides"
+ *    You must call the parent's printMessage() method using super.printMessage().
+ *
+ */
+//Your code goes here
+
+// Extend the Rectangle class to create Square class
+public class Square extends Rectangle {
+    public Square(String name) {
+    	super("Rectangle");
+    }
+
+/**
+* Prints the number of sides and sides description
+* @param none
+* @return none
+*/
+   public void printMessage(){
+      System.out.println("  I am a 4 sided figure");
+      System.out.println("    I have equal sides");
+   }
+}
+</pre>
+</div>
+<p class="header score">Score</p>
+<div class="score">
+<p class="score">1/1</p>
+</div>
+<div class="footnotes"><div class="footnote">2021-09-15T20:28:07Z</div>
+</div>
+</body></html>
