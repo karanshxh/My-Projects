@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="Submission" content="CP3FRL8NP78315O19291AYPGB"/>
+<meta name="Time" content="2021-10-13T06:50:02Z"/>
+<meta name="ID" content="Digits"/>
+<meta name="User" content="jaga-vuli-bofa-ryfi"/>
+<meta name="Problem" content="ext/2110121559eqlm3yh9qbc3ga506r0rm60dt"/>
+<meta name="Elapsed" content="6475 ms"/>
+<style type="text/css">
+.header {font-weight: bold; font-size: 1.2em; }
+.item {font-weight: bold;}
+.pass {color: green;}
+.fail {color: red;}
+.note {color: blue; font-weight: bold;}
+table.file td {padding-right: 1em; background: #FFF; }
+.linenumber {color: gray;}
+.footnote {font-size: 0.7em;}
+table {font-size: 0.9em;}
+td, th { background: #EEE; margin: 0.5em; padding: 0.25em;}
+table.output td {vertical-align: top;}
+div.footnotes { border-top: 1px solid gray; padding-top: 0.5em; }
+</style>
+<title>Report</title>
+</head>
+<body>
+<p class="header run">Testing DigitsDriver.java</p>
+<div class="run">
+<pre class="output">Enter a three digit number: <b>936</b>
+The three digits of the number 936 are
+9
+3
+6
+</pre>
+<span class="pass">pass </span></div>
+<p class="header checkStyle">CheckStyle</p>
+<div class="checkStyle">
+<pre class="output">Starting audit...
+Audit done.
+</pre>
+<span class="pass">pass </span></div>
+<p class="header studentFiles">Submitted files</p>
+<div class="studentFiles">
+<p class="caption">Digits.java:</p>
+<pre class="output">/**
+* Last name: Shah
+* First name: Karan 
+* Student ID: 12094459
+* Period: 2
+* 
+* Unit 2 Lab 2 - Digits
+* 
+* Write a program that inputs a positive three digit integer. 
+* and prints out the digits one per line.
+* Sample run:
+* Please enter a three digit number: 678
+* The digits of the three digit number 678 are
+* 6
+* 7
+* 8
+* 
+* Do the following:
+* 
+* 1. Create three instance variables to hold the three digits of the number
+* 2. Write a private helper method called split that splits the given three digit number
+*    to three separate digits. Initialize the three instance variables here.
+* 3. Write a constructor that takes in a three digit number and calls the 
+*    split method written above.
+* 4. Write a toString method that returns the string to print the three digits of the number in
+*    the following format:
+*    The three digits of the number 678 are 
+*    6
+*    7
+*    8
+* 5. Include Javadoc style comments for each method.
+*    
+*/
+
+public class Digits {
+	private int firstDigit;
+	private int secondDigit;
+	private int thirdDigit;
+	
+	/** 
+	 * split gets the first, second, and third digits of a 3 digit number and assigns them to instance variables
+	 * @param num the 3 digit integer
+	 */
+	public void split(int num) {
+		firstDigit = (num/100);
+		num -= (firstDigit*100);
+		
+		secondDigit = (num/10);
+		num -= (secondDigit*10);
+		
+		thirdDigit = num;
+	}
+	
+	/**
+	 * Calls split method with parameter as 3 digit number
+	 * @param num the 3 digit integer
+	 */
+	public Digits(int num) {
+		split(num);
+	}
+	
+	/** 
+	 * toString method to list out the 3 digits
+	 * @param num the 3 digit integer
+	 * @return string
+	 */
+	public String toString(int num) {
+		return ("The three digits of the number " + num + " are\n" + firstDigit + "\n" + secondDigit + "\n" + thirdDigit);
+	}
+}
+</pre>
+<p class="caption">DigitsDriver.java:</p>
+<pre class="output">import java.util.Scanner;
+
+/**
+* Last name: Shah
+* First name: Karan
+* Student ID: 12094459
+* Period: 2
+* 
+* Unit 2 Lab 2 - Digits
+* 
+* Write a program that inputs a positive three digit integer. 
+* and prints out the digits one per line.
+* Sample run:
+* Please enter a three digit number: 678
+* The digits of the three digit number 678 are
+* 6
+* 7
+* 8
+* 
+* Follow the directions given within the code to get user input, 
+* create a Digits object, and print it.
+*/
+public class DigitsDriver {
+	 /**
+     * main sets things in motion
+     * @param args - command line arguments
+     */
+	public static void main(String[] args) {
+		//Create a scanner object to get input from the user
+		Scanner input = new Scanner(System.in);
+
+
+		//Prompt the user for a three digit number
+		System.out.print("Enter a three digit number: ");
+
+
+		//Read in the number entered by the user
+		final int number = input.nextInt();
+
+
+		//Create a Digits object with the number given
+		Digits numberDigits = new Digits(number);
+
+
+		//Print the Digits object
+		System.out.println(numberDigits.toString(number));
+	}
+}
+</pre>
+</div>
+<p class="header providedFiles">Provided files</p>
+<div class="providedFiles">
+<p class="caption">test.in:</p>
+<pre class="output">936</pre>
+</div>
+<p class="header score">Score</p>
+<div class="score">
+<p class="score">2/2</p>
+</div>
+<div class="footnotes"><div class="footnote">2021-10-13T06:50:02Z</div>
+</div>
+</body></html>
