@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="Submission" content="74JA90OEEBTO2Z036O9QRBEWV"/>
+<meta name="Time" content="2021-10-14T04:29:33Z"/>
+<meta name="ID" content="VotingMachine"/>
+<meta name="User" content="jaga-vuli-bofa-ryfi"/>
+<meta name="Problem" content="ext/2110121611czcz018c1s45kdq281k32pvnl"/>
+<meta name="Elapsed" content="4975 ms"/>
+<style type="text/css">
+.header {font-weight: bold; font-size: 1.2em; }
+.item {font-weight: bold;}
+.pass {color: green;}
+.fail {color: red;}
+.note {color: blue; font-weight: bold;}
+table.file td {padding-right: 1em; background: #FFF; }
+.linenumber {color: gray;}
+.footnote {font-size: 0.7em;}
+table {font-size: 0.9em;}
+td, th { background: #EEE; margin: 0.5em; padding: 0.25em;}
+table.output td {vertical-align: top;}
+div.footnotes { border-top: 1px solid gray; padding-top: 0.5em; }
+</style>
+<title>Report</title>
+</head>
+<body>
+<p class="header run">Testing VotingSimulation.java</p>
+<div class="run">
+<pre class="output">Vote simulation 2020-21
+-----------------------
+Democrats: 2
+Republicans: 3
+Independents: 1
+Total Votes: 6
+Percent Democrat Votes: 33.333333333333336
+Percent Republican Votes: 50.0
+Percent Independent Votes: 16.666666666666668
+
+Democrats: 1230
+Republicans: 1456
+Independents: 440
+Total Votes: 3126
+Percent Democrat Votes: 39.34740882917466
+Percent Republican Votes: 46.57709532949456
+Percent Independent Votes: 14.075495841330774
+
+Democrats: 1732
+Republicans: 1608
+Independents: 1242
+Total Votes: 4582
+Percent Democrat Votes: 37.80008729812309
+Percent Republican Votes: 35.09384548232213
+Percent Independent Votes: 27.10606721955478
+</pre>
+<span class="pass">pass </span></div>
+<p class="header checkStyle">CheckStyle</p>
+<div class="checkStyle">
+<pre class="output">Starting audit...
+Audit done.
+</pre>
+<span class="pass">pass </span></div>
+<p class="header studentFiles">Submitted files</p>
+<div class="studentFiles">
+<p class="caption">VotingMachine.java:</p>
+<pre class="output">/**
+ * 
+ * Last name: Shah
+ * First name: Karan 
+ * Student ID: 12094459
+ * Period: 2
+ * 
+ * Implement a VotingMachine class that can be used for a simple election. Have
+ * methods to clear the machine state, to vote for a Democrat, to vote for a
+ * Republican, to vote for an independent to get the tallies for all three
+ * parties. You will need the following:
+ * 
+ * 1. Instance variables for the democrat votes, republican votes and independent
+ *    votes. 
+ * 2. Constructors: There should be a default constructor that can create a
+ *    brand new voting machine without any votes in it as well as a constructor
+ *    that can accept initial votes for each of the three parties. Would there be
+ *    any other constructors that could come in handy? 
+ * 3. Getter methods for returning the number of votes of each party candidate. 
+ *    The methods must be named getDemocratVotes, getRepublicanVotes, and getIndependentVotes. 
+ * 4. Setter methods for changing the number of votes of each party candidate to given numbers.
+ *    The methods must be named setDemocratVotes, setRepublicanVotes, and
+ *     setIndependentVotes. 
+ * 5. Methods that will increment the votes by 1. Call these methods voteDemocrat, voteRepublican, 
+ *    and voteIndependent. 
+ * 6. Overloaded methods, voteDemocrat, voteRepublican, and voteIndependent that will
+ *    increment the votes by a given amount. The amount of votes to be incremented
+ *    by will be passed in as parameters. 
+ * 7. A method to clear all the votes. A method to calculate and return the total votes. 
+ *    Call this method totalVotes. 
+ * 8. Methods to calculate and return the percent democrat, republican and independent
+ *    votes. Call the methods percentDemocrat, percentRepublican, and
+ *    percentIndependent. These methods must call the totalVotes method rather than
+ *    recalculating it. 
+ * 9. A method to return a string to print the vote statistics. Call this method toString. The 
+ *    information includes the total votes, percent democrat votes, percent republican votes, and 
+ *    percent independent votes. This method must call the totalVotes, percentDemocrat, 
+ *    percentRepublican , and percentIndependent method rather than recalculating all of the stats.
+ *    
+ * Here is a sample output:
+ *
+ * Democrats: 2
+ * Republicans: 3
+ * Independents: 1 
+ * Total votes: 6
+ * Percent Democrat Votes: 33.33333333333333 
+ * Percent Republican Votes: 50.0
+ * Percent Independent Votes: 16.666666666666664
+ * 
+ */
+public class VotingMachine {
+	//Your code goes here
+	private int democratVotes;
+	private int republicanVotes;
+	private int independentVotes;
+	
+	/**
+	 * Defualt Constructor
+	 */
+	public VotingMachine(){
+	   democratVotes = 0;
+	   republicanVotes = 0;
+	   independentVotes = 0;
+	   
+	   
+	}
+	
+	/**
+	 * Constructor that accepts values for all parameters 
+	 * @param democratVotes number of democrat votes
+	 * @param republicanVotes int republican votes
+	 * @param independentVotes int independent votes
+	 */
+	public VotingMachine(int democratVotes, int republicanVotes, int independentVotes){
+	   this.democratVotes = democratVotes;
+	   this.republicanVotes = republicanVotes;
+	   this.independentVotes = independentVotes;
+	}
+	
+
+	/**
+	 * Getter method for number of Democrat votes
+	 * @return democraticVotes int
+	 */
+	public int getDemocratVotes(){
+	   return democratVotes;
+	}
+	
+	/**
+	 * Getter method for number of Republican votes
+	 * @return republicanVotes int
+	 */
+	public int getRepublicanVotes(){
+	   return republicanVotes;
+	}
+	
+	/**
+	 * Getter method for number of Independent votes
+	 * @return independentVotes int
+	 */
+	public int getIndependentVotes(){
+	   return independentVotes;
+	}
+	
+
+	/**
+     * Setter method for number of Democrat votes
+     * @param newDemocratVotes int number of Democrat Votes
+     */
+	public void setDemocratVotes(int newDemocratVotes) {
+	   democratVotes = newDemocratVotes;
+	}
+
+	/**
+     * Setter method for number of Republican votes
+     * @param newRepublicanVotes int number of Republican Votes
+     */
+	public void setRepublicanVotes(int newRepublicanVotes) {
+	   republicanVotes = newRepublicanVotes;
+	}
+
+	/**
+     * Setter method for number of Independent votes
+     * @param newIndependentVotes int number of Indepdent Votes
+     */
+	public void setIndependentVotes(int newIndependentVotes) {
+	   independentVotes = newIndependentVotes;
+	}
+
+
+	/**
+	 * Adds one vote to democratVotes
+     */
+	public void voteDemocrat() {
+	   democratVotes++;
+	}
+
+	/**
+	 * Adds one vote to independentVotes
+     */
+	public void voteIndependent() {
+	   independentVotes++;
+	}
+
+	/**
+	 * Adds one vote to republicanVotes
+     */
+	public void voteRepublican() {
+	   republicanVotes++;
+	}
+
+	
+	/**
+     * Adds givenAmount to Democrat votes
+     * @param givenAmount int to add
+     */
+	public void voteDemocrat(int givenAmount) {
+	   democratVotes += givenAmount;
+	}
+	/**
+     * Adds givenAmount to Republican votes
+     * @param givenAmount int to add
+     */
+	public void voteRepublican(int givenAmount) {
+	   republicanVotes += givenAmount;
+	}
+	/**
+     * Adds givenAmount to Indepdent votes
+     * @param givenAmount int to add
+     */
+	public void voteIndependent(int givenAmount) {
+	   independentVotes += givenAmount;
+	}
+	
+	/**
+     * Resets all 3 party votes to 0
+     */
+	public void clear() {
+	   independentVotes = 0;
+	   republicanVotes = 0;
+	   democratVotes = 0;
+	}
+	
+	/** Calculate and return total number of votes
+     * @return int - total number of votes
+     */
+	public int totalVotes() {
+	   return (democratVotes + republicanVotes + independentVotes);
+	}
+
+
+	/**
+     * Calculate the percentage of Democrat votes
+     * @return Double - Percent of Democrat votes
+     */
+	public double percentDemocrat() {
+	   return (100.00 * democratVotes / totalVotes());
+	}
+
+	/**
+     * Calculate the percentage of Republican votes
+     * @return Double - Percentage of Republican votes
+     */
+	public double percentRepublican() {
+	   return (100.00 * republicanVotes / totalVotes());
+	}
+
+	/**
+     * Calculate the percentage of Indepdent votes
+     * @return Double - Percentage of Independence votes
+     */
+	public double percentIndependent() {
+	   return (100.00 * independentVotes / totalVotes());
+	}
+
+
+	/**
+     * toString returns the percentage of each party's votes
+     * the votes.
+     * @return percetange of votes
+     */
+	public String toString() {
+	   return ("Total Votes: " + totalVotes() 
+	   	+ "\nPercent Democrat Votes: " + percentDemocrat()
+	    	+ "\nPercent Republican Votes: " + percentRepublican()
+	    	+ "\nPercent Independent Votes: " + percentIndependent());
+	}
+}
+</pre>
+</div>
+<p class="header providedFiles">Provided files</p>
+<div class="providedFiles">
+<p class="caption">VotingSimulation.java:</p>
+<pre class="output">
+/**
+ * This program simulates an election.
+ */
+public class VotingSimulation {
+	public static void main(String[] args) {
+		System.out.println("Vote simulation 2020-21");
+		System.out.println("-----------------------");
+		VotingMachine vm = new VotingMachine();
+		vm.clear();
+
+		vm.voteDemocrat();
+		vm.voteRepublican();
+		vm.voteDemocrat();
+		vm.voteRepublican();
+		vm.voteRepublican();
+		vm.voteIndependent();
+
+		System.out.print("Democrats: ");
+		System.out.println(vm.getDemocratVotes());
+		System.out.print("Republicans: ");
+		System.out.println(vm.getRepublicanVotes());
+		System.out.print("Independents: ");
+		System.out.println(vm.getIndependentVotes());
+		System.out.println(vm);
+		System.out.println();
+		
+		vm = new VotingMachine(1000, 850, 200);
+		vm.voteDemocrat(100);
+		vm.voteRepublican(200);
+		vm.voteIndependent(240);
+		vm.voteDemocrat(130);
+		vm.voteRepublican(250);
+		vm.voteRepublican(156);
+
+		System.out.print("Democrats: ");
+		System.out.println(vm.getDemocratVotes());
+		System.out.print("Republicans: ");
+		System.out.println(vm.getRepublicanVotes());
+		System.out.print("Independents: ");
+		System.out.println(vm.getIndependentVotes());
+		
+		System.out.println(vm);
+		System.out.println();
+
+		
+		vm.clear();
+		vm.setDemocratVotes(1502);
+		vm.setRepublicanVotes(1002);
+		vm.setIndependentVotes(1002);
+		
+		vm.voteDemocrat(100);
+		vm.voteRepublican(200);
+		vm.voteIndependent(240);
+		vm.voteDemocrat(130);
+		vm.voteRepublican(250);
+		vm.voteRepublican(156);
+		
+		System.out.print("Democrats: ");
+		System.out.println(vm.getDemocratVotes());
+		System.out.print("Republicans: ");
+		System.out.println(vm.getRepublicanVotes());
+		System.out.print("Independents: ");
+		System.out.println(vm.getIndependentVotes());
+		System.out.println(vm);
+	}
+}
+</pre>
+</div>
+<p class="header score">Score</p>
+<div class="score">
+<p class="score">2/2</p>
+</div>
+<div class="footnotes"><div class="footnote">2021-10-14T04:29:33Z</div>
+</div>
+</body></html>
