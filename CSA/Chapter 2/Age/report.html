@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="Submission" content="BJQNR9JWXQTZ22OJ2UD0MTZEB"/>
+<meta name="Time" content="2021-10-13T06:53:24Z"/>
+<meta name="ID" content="Age"/>
+<meta name="User" content="jaga-vuli-bofa-ryfi"/>
+<meta name="Problem" content="ext/210930181692hpco3knlxon9rx767yjrvo2"/>
+<meta name="Elapsed" content="12967 ms"/>
+<style type="text/css">
+.header {font-weight: bold; font-size: 1.2em; }
+.item {font-weight: bold;}
+.pass {color: green;}
+.fail {color: red;}
+.note {color: blue; font-weight: bold;}
+table.file td {padding-right: 1em; background: #FFF; }
+.linenumber {color: gray;}
+.footnote {font-size: 0.7em;}
+table {font-size: 0.9em;}
+td, th { background: #EEE; margin: 0.5em; padding: 0.25em;}
+table.output td {vertical-align: top;}
+div.footnotes { border-top: 1px solid gray; padding-top: 0.5em; }
+</style>
+<title>Report</title>
+</head>
+<body>
+<p class="header run">Testing Age.java</p>
+<div class="run">
+<pre class="output">Enter the current year: <b>2021</b>
+Enter your birth year: <b>1992</b>
+Enter your dog's birth year<b>2011</b>
+Your age is 29
+Your dog's age is 10
+Your dog's age in dog years is 70
+</pre>
+<span class="pass">pass </span></div>
+<p class="header studentFiles">Submitted files</p>
+<div class="studentFiles">
+<p class="caption">Age.java:</p>
+<pre class="output">
+
+import java.util.Scanner;
+
+/*
+* Last name: Shah
+* First name: Karan
+* Student ID: 12094459
+* Period: 2
+* 
+* Unit 2 Lab 1
+* 
+* In this programming challenge, you will calculate the user's age, 
+* their pet's age, and their pet's age in dog years. In the code 
+* below, prompt the user for the current year, the year they were 
+* born, and the year their dog or cat was born. Save these values 
+* in the variables. Then write formulas in assignment statements
+* to calculate how old the user is, how old their dog or cat is, and how 
+* old their dog/cat is in dog years which is 7 times a human year. Finally, 
+* print it all out. 
+*/
+
+
+public class Age
+{
+   public static void main(String[] args)
+   {
+	   //Declare a final integer variable called AGE_FACTOR that is initialized to 7
+	   final int AGE_FACTOR = 7;
+	   
+	   //Create and initialize a Scanner
+	   Scanner input = new Scanner(System.in);
+	   
+	   // Prompt the user for the current year, birth year, and their dog's birth year
+	   // and save the values input by the user into the corresponding variables
+	   
+
+	   System.out.print("Enter the current year: ");
+	   int currentYear = input.nextInt();
+	   
+	   System.out.print("Enter your birth year: ");
+	   int birthYear = input.nextInt();
+	  
+	   System.out.print("Enter your dog's birth year");
+	   int dogBirthYear = input.nextInt();
+
+
+	   // Write a formula to calculate your age
+	   // from the currentYear and your birthYear variables
+	   int age = currentYear - birthYear;
+
+	   // Write a formula to calculate your dog's age
+	   // from the currentYear and dogBirthYear variables
+	   int dogAge = currentYear - dogBirthYear; 
+
+	   // Calculate the age of your dog in dogYears (AGE_FACTOR times a human year)
+	   int dogYearsAge = dogAge * AGE_FACTOR; 
+
+	   // Print out your age, your dog's age, and your dog's age in dog years. Make sure you print out text too so that the user knows what is being printed out.
+	   System.out.println("Your age is " + age);
+	   System.out.println("Your dog's age is " + dogAge);
+	   System.out.println("Your dog's age in dog years is " + dogYearsAge);
+
+	   
+
+   }
+}
+</pre>
+</div>
+<p class="header providedFiles">Provided files</p>
+<div class="providedFiles">
+<p class="caption">test.in:</p>
+<pre class="output">2021
+1992
+2011</pre>
+</div>
+<p class="header score">Score</p>
+<div class="score">
+<p class="score">1/1</p>
+</div>
+<div class="footnotes"><div class="footnote">2021-10-13T06:53:24Z</div>
+</div>
+</body></html>
